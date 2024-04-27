@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React, { FunctionComponent} from "react";
+import React, { FunctionComponent } from "react";
 
 export enum CardVariant {
   outlined = "outlined",
@@ -11,9 +11,10 @@ interface CardProps {
   height?: string;
   variant: CardVariant;
   children: React.ReactNode;
-  onClick: (num:number) => void;
-//   onClick: () => number;
-//   onClick: () => string;
+  onClick: (num: number) => void;
+  //   onClick: () => number;
+  //   onClick: () => string;
+  // children: any;
   // children: any;
 }
 const Card: FunctionComponent<CardProps> = ({
@@ -23,7 +24,7 @@ const Card: FunctionComponent<CardProps> = ({
   onClick,
   children,
 }) => {
-    const[state,setState]=useState(0)
+  const [state, setState] = useState(0);
   return (
     <div
       style={{
@@ -32,7 +33,7 @@ const Card: FunctionComponent<CardProps> = ({
         border: variant === CardVariant.outlined ? "2px solid gray" : "none",
         background: variant === CardVariant.primary ? "lightgray" : "",
       }}
-      onClick={()=>onClick(state)}
+      onClick={() => onClick(state)}
     >
       {children}
     </div>
